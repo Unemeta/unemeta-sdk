@@ -1,8 +1,8 @@
 # @unemeta/sdk
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/LooksRare/unemeta-sdk) ![GitHub](https://img.shields.io/github/license/LooksRare/unemeta-sdk) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/LooksRare/unemeta-sdk/Build)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Unemeta/unemeta-sdk) ![GitHub](https://img.shields.io/github/license/Unemeta/unemeta-sdk) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Unemeta/unemeta-sdk/Build)
 
-This SDK is a collection of tools used to interact with the LooksRare API and smart contracts.
+This SDK is a collection of tools used to interact with the Unemeta API and smart contracts.
 
 ## Usage
 
@@ -30,10 +30,10 @@ Read the [complete documentation](./doc/index.md)
 
 ### Setup
 
-Install dependencies with `yarn`
+Install dependencies with `pnpm`
 
-- **Dev**: `yarn dev`
-- **Build**: `yarn build`
+- **Dev**: `pnpm dev`
+- **Build**: `pnpm build`
 
 ### Release
 
