@@ -20,7 +20,7 @@ export const getMakerOrderTypeAndDomain = (
   domain: TypedDataDomain;
 } => {
   const domain: TypedDataDomain = {
-    name: "LooksRareExchange",
+    name: "UnemetaMarket",
     version: version.toString(),
     chainId,
     verifyingContract: verifyingContract ? verifyingContract : addressesByNetwork[chainId].EXCHANGE,

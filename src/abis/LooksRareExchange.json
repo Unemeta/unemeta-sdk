@@ -325,19 +325,6 @@
   },
   {
     "inputs": [],
-    "name": "DOMAIN_SEPARATOR",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "WETH",
     "outputs": [
       {
@@ -366,7 +353,7 @@
     "inputs": [
       {
         "internalType": "uint256[]",
-        "name": "orderNonces",
+        "name": "NonceList",
         "type": "uint256[]"
       }
     ],
@@ -380,7 +367,7 @@
     "name": "currencyManager",
     "outputs": [
       {
-        "internalType": "contract ICurrencyManager",
+        "internalType": "contract TheCurrencyManager",
         "name": "",
         "type": "address"
       }
@@ -393,7 +380,7 @@
     "name": "executionManager",
     "outputs": [
       {
-        "internalType": "contract IExecutionManager",
+        "internalType": "contract TheExManager",
         "name": "",
         "type": "address"
       }
@@ -552,7 +539,7 @@
         "type": "tuple"
       }
     ],
-    "name": "matchAskWithTakerBid",
+    "name": "matchSellerOrders",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -684,7 +671,7 @@
         "type": "tuple"
       }
     ],
-    "name": "matchAskWithTakerBidUsingETHAndWETH",
+    "name": "matchSellerOrdersWETH",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
@@ -816,7 +803,7 @@
         "type": "tuple"
       }
     ],
-    "name": "matchBidWithTakerAsk",
+    "name": "matchesBuyerOrder",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -859,7 +846,7 @@
     "name": "royaltyFeeManager",
     "outputs": [
       {
-        "internalType": "contract IRoyaltyFeeManager",
+        "internalType": "contract TheRoyaltyManager",
         "name": "",
         "type": "address"
       }
@@ -885,7 +872,7 @@
     "name": "transferSelectorNFT",
     "outputs": [
       {
-        "internalType": "contract ITransferSelectorNFT",
+        "internalType": "contract TheTransferSelector",
         "name": "",
         "type": "address"
       }

@@ -2,7 +2,7 @@
 
 ## How to create and sign an order
 
-The `signMakerOrder` function is a helper used on LooksRare to trigger an EIP-712 signature on our supported wallets.
+The `signMakerOrder` function is a helper used on UneMeta to trigger an EIP-712 signature on our supported wallets.
 
 ```ts
 import { BigNumber } from "ethers";
@@ -101,6 +101,4 @@ const order: TakerOrder = {
 };
 ```
 
-- [matchAskWithTakerBid](https://docs.unemeta.org/developers/exchange/LooksRareExchange#matchaskwithtakerbid)
-- [matchAskWithTakerBidUsingETHAndWETH](https://docs.unemeta.org/developers/exchange/LooksRareExchange#matchaskwithtakerbidusingethandweth)
-- [matchBidWithTakerAsk](https://docs.unemeta.org/developers/exchange/LooksRareExchange#matchbidwithtakerask)
+- [matchSellerOrdersWETH](https://docs.unemeta.org/developers/exchange/LooksRareExchange#matchSellerOrdersWETH)
