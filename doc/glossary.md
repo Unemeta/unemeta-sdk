@@ -10,7 +10,7 @@ Buy order.
 
 ### Maker order
 
-Order adding liquidity to the exchange. A maker order is signed and stored in LooksRare database before being executed.
+Order adding liquidity to the exchange. A maker order is signed and stored in UneMeta database before being executed.
 
 ### Taker order
 

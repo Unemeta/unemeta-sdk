@@ -28,7 +28,7 @@ const makerOrder: MakerOrder = {
   collection: "0xcE25E60A89F200B1fA40f6c313047FFe386992c3",
   price: "1000000000000000000", // :warning: PRICE IS ALWAYS IN WEI :warning:
   tokenId: "1", // Token id is 0 if you use the STRATEGY_COLLECTION_SALE strategy
-  amount: "1",
+  amount: 1, // Warning: Amount is int
   strategy: addresses.STRATEGY_STANDARD_SALE,
   currency: addresses.WETH,
   nonce: nonce.toNumber(),
@@ -60,21 +60,11 @@ Call the public api endpoint [/orders/nonce](https://unemeta.github.io/api-docs/
 
 ## How to retrieve the fees
 
-- **Protocol fees**: Call the view function [viewProtocolFee](https://github.com/LooksRare/unemeta-sdk/blob/master/src/abis/IExecutionStrategy.json#L300) on the strategy contract.
-
-```ts
-const protocolFee: BigNumber = await contract.viewProtocolFee();
-```
-
-- **Collection royalties fees**: Call the function [royaltyFeeInfoCollection](https://github.com/LooksRare/unemeta-sdk/blob/master/src/abis/RoyaltyFeeRegistry.json#L104) on the RoyaltyFeeRegistry contract.
+- **Collection royalties fees**: Call the function [royaltyFeeInfoCollection](https://github.com/Unemeta/unemeta-sdk/blob/master/src/abis/RoyaltyFee.json) on the RoyaltyFee contract.
 
 ```ts
 const [setter, receiver, fee]: [string, string, BigNumber] = await contract.royaltyFeeInfoCollection(collectionAddress);
 ```
-
-## What to do when the order is created and signed ?
-
-Use the public api endpoints [/orders](https://unemeta.github.io/api-docs/#/Orders/OrderController.createOrder) to push the order to the database. After that, the order will be visible by everyone using the API (unemeta.org, aggregators, etc..).
 
 ## How to execute an order
 

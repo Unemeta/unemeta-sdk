@@ -1,6 +1,6 @@
 # Types
 
-The best way to understand types is to look at the [code](https://github.com/LooksRare/unemeta-sdk/tree/master/src/types) directly. However, here is some documentation about the main types.
+The best way to understand types is to look at the [code](https://github.com/Unemeta/unemeta-sdk/tree/master/src/types) directly. However, here is some documentation about the main types.
 
 ## SupportedChainId
 
@@ -8,7 +8,6 @@ The best way to understand types is to look at the [code](https://github.com/Loo
 import { SupportedChainId } from "@unemeta/sdk";
 SupportedChainId.MAINNET; // 1;
 SupportedChainId.GOERLI; // 5;
-SupportedChainId.HARDHAT; // 31337;
 ```
 
 ## MakerOrder

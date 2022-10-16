@@ -22,12 +22,12 @@ For a given array of params used to create a maker order, generate the correspon
 const { domain, type } = getMakerOrderTypeAndDomain(chainId, verifyingContract);
 ```
 
-Generate the [EIP-712](https://eips.ethereum.org/EIPS/eip-712) `type` and `domain` information used to sign an order on LooksRare.
+Generate the [EIP-712](https://eips.ethereum.org/EIPS/eip-712) `type` and `domain` information used to sign an order on Unemeta.
 
 #### Params
 
-- **chainId ([SupportedChainId](https://github.com/LooksRare/unemeta-sdk/blob/master/src/types/enum.ts#L1))**: Chain ID of the blockchain where your application is running.
-- **verifyingContract (string?)**: Contract address where the signature will be used. It will always be the LooksRareExchange address (EXCHANGE in the [addresses list](https://github.com/LooksRare/unemeta-sdk/blob/master/src/constants/addresses.ts#L10). The address differs based on the chain you are using). If you don't provide it, it will use the exchange address for the chainId you provided.
+- **chainId ([SupportedChainId](https://github.com/Unemeta/unemeta-sdk/blob/master/src/types/enum.ts#L1))**: Chain ID of the blockchain where your application is running.
+- **verifyingContract (string?)**: Contract address where the signature will be used. It will always be the UneMetaExchange address (EXCHANGE in the [addresses list](https://github.com/Unemeta/unemeta-sdk/blob/master/src/constants/addresses.ts). The address differs based on the chain you are using). If you don't provide it, it will use the exchange address for the chainId you provided.
 
 #### Returns
 
@@ -44,9 +44,9 @@ Generate the domain, value, and type used to generate an EIP-712 (typed data sig
 #### Params
 
 - **signer (string)**: The signer address.
-- **chainId ([SupportedChainId](https://github.com/LooksRare/unemeta-sdk/blob/master/src/types/enum.ts#L1))**: Chain ID of the blockchain where your application is running.
-- **makerOrder ([MakerOrder](https://github.com/LooksRare/unemeta-sdk/blob/master/src/types/orders.ts#L7))**: The maker order object.
-- **verifyingContract (string?)**: Contract address where the signature will be used. It will always be the LooksRareExchange address (EXCHANGE in the [addresses list](https://github.com/LooksRare/unemeta-sdk/blob/master/src/constants/addresses.ts#L10). The address differs based on the chain you are using). If you don't provide it, it will use the exchange address for the chainId you provided.
+- **chainId ([SupportedChainId](https://github.com/Unemeta/unemeta-sdk/blob/master/src/types/enum.ts#L1))**: Chain ID of the blockchain where your application is running.
+- **makerOrder ([MakerOrder](https://github.com/Unemeta/unemeta-sdk/blob/master/src/types/orders.ts#L7))**: The maker order object.
+- **verifyingContract (string?)**: Contract address where the signature will be used. It will always be the UneMetaExchange address (EXCHANGE in the [addresses list](https://github.com/Unemeta/unemeta-sdk/blob/master/src/constants/addresses.ts#L10). The address differs based on the chain you are using). If you don't provide it, it will use the exchange address for the chainId you provided.
 
 ## signMakerOrder
 
@@ -57,9 +57,9 @@ const signature = await signMakerOrder(signer, chainId, order, verifyingContract
 #### Params
 
 - **signer (JsonRpcSigner)**: Json RPC signer object from [ethers](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner).
-- **chainId ([SupportedChainId](https://github.com/LooksRare/unemeta-sdk/blob/master/src/types/enum.ts#L1))**: Chain ID of the blockchain where your application is running.
-- **order ([MakerOrder](https://github.com/LooksRare/unemeta-sdk/blob/master/src/types/sign.ts#L9))**:
-- **verifyingContractAddress (string)**: Contract address where the signature will be used. It will always be the LooksRareExchange address (EXCHANGE in the [addresses list](https://github.com/LooksRare/unemeta-sdk/blob/master/src/constants/addresses.ts#L10). The address differs based on the chain you are using). If you don't provide it, it will use the exchange address for the chainId you provided.
+- **chainId ([SupportedChainId](https://github.com/Unemeta/unemeta-sdk/blob/master/src/types/enum.ts#L1))**: Chain ID of the blockchain where your application is running.
+- **order ([MakerOrder](https://github.com/Unemeta/unemeta-sdk/blob/master/src/types/sign.ts#L9))**:
+- **verifyingContractAddress (string)**: Contract address where the signature will be used. It will always be the UneMetaExchange address (EXCHANGE in the [addresses list](https://github.com/Unemeta/unemeta-sdk/blob/master/src/constants/addresses.ts). The address differs based on the chain you are using). If you don't provide it, it will use the exchange address for the chainId you provided.
 
 #### Returns
 

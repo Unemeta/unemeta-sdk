@@ -15,8 +15,7 @@ export interface Addresses {
   LOOKS_LP: string;
   WETH: string;
   ROYALTY_FEE_MANAGER: string;
-  ROYALTY_FEE_REGISTRY: string;
-  ROYALTY_FEE_SETTER: string;
+  ROYALTY_FEE: string;
   EXCHANGE: string;
   TRANSFER_MANAGER_ERC721: string;
   TRANSFER_MANAGER_ERC1155: string;
