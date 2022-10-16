@@ -43,7 +43,7 @@ export interface TakerOrder {
   price: BigNumberish; // price for the purchase
   tokenId: BigNumberish;
   minPercentageToAsk: BigNumberish;
-  params: any[]; // params (e.g., price)
+  params: any[] | BytesLike; // params (e.g., price)
 }
 
 export interface TakerOrderWithEncodedParams extends Omit<TakerOrder, "params"> {
