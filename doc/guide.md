@@ -56,7 +56,7 @@ const signature = await signer._signTypedData(domain, type, value);
 
 ## How to retrieve the user nonce
 
-Call the public api endpoint [/orders/nonce](https://unemeta.github.io/api-docs/#/Orders/OrderController.getOrderNonce), and use this nonce directly.
+Call the public api endpoint [nonce](https://yapi.unemeta.com/project/19/interface/api/467), and use this nonce directly.
 
 ## How to retrieve the fees
 
@@ -90,5 +90,3 @@ const order: TakerOrder = {
   params: encodedParams,
 };
 ```
-
-- [matchSellerOrdersWETH](https://docs.unemeta.org/developers/exchange/LooksRareExchange#matchSellerOrdersWETH)
