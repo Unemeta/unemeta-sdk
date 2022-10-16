@@ -26,6 +26,8 @@ npm install @unemeta/sdk ethers --save
 
 Read the [complete documentation](./doc/index.md)
 
+> [demo project](https://github.com/Unemeta/unemeta-sdk-demo)
+
 ## Dev
 
 ### Setup

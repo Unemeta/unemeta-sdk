@@ -40,6 +40,8 @@ const makerOrder: MakerOrder = {
 const signatureHash = await signMakerOrder(signer, chainId, makerOrder);
 ```
 
+- [full list demo code](https://github.com/Unemeta/unemeta-sdk-demo/blob/main/src/App.tsx#L24-L63)
+
 If for any reason, the `signMakerOrder` doesn't fit your needs (i.e you only have access to an wallet, and not a json rpc provider), you can replace the `signMakerOrder` call with this:
 
 ```ts
@@ -53,6 +55,8 @@ const signerAddress = await signer.getAddress();
 const { domain, value, type } = generateMakerOrderTypedData(signerAddress, chainId, makerOrder);
 const signature = await signer._signTypedData(domain, type, value);
 ```
+
+- [full private key list demo code](https://github.com/Unemeta/unemeta-sdk-demo/blob/main/src/App.tsx#L68-L116)
 
 ## How to retrieve the user nonce
 
@@ -90,3 +94,5 @@ const order: TakerOrder = {
   params: encodedParams,
 };
 ```
+
+- [full take order demo code](https://github.com/Unemeta/unemeta-sdk-demo/blob/main/src/App.tsx#L121-L172)
