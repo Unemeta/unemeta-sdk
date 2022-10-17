@@ -60,7 +60,7 @@ const signature = await signer._signTypedData(domain, type, value);
 
 ## How to retrieve the user nonce
 
-Call the public api endpoint [nonce](https://yapi.unemeta.com/project/19/interface/api/467), and use this nonce directly.
+Call the public api endpoint [nonce](https://unemetatest.readme.io/reference/makeorder-1), and use this nonce directly.
 
 ## How to retrieve the fees
 
