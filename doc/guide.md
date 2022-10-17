@@ -95,4 +95,4 @@ const order: TakerOrder = {
 };
 ```
 
-- [full take order demo code](https://github.com/Unemeta/unemeta-sdk-demo/blob/main/src/App.tsx#L137-L188)
+- [full take order demo code](https://github.com/Unemeta/unemeta-sdk-demo/blob/main/src/App.tsx#L137-L189)
