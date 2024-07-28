@@ -11,11 +11,11 @@ export const CHAIN_INFO: { [chainId in SupportedChainId]: ChainInfo } = {
     rewardsSubgraphUrl: "https://api.thegraph.com/subgraphs/name/unemeta/looks-distribution",
     cloudinaryUrl: "https://unemeta.mo.cloudinary.net",
   },
-  [SupportedChainId.GOERLI]: {
-    label: "Goerli",
+  [SupportedChainId.SEPOLIA]: {
+    label: "Sepolia",
     appUrl: "https://test.unemeta.com",
-    explorer: "https://goerli.etherscan.io",
-    rpcUrl: `https://eth-goerli.alchemyapi.io/v2`,
+    explorer: "https://sepolia.etherscan.io",
+    rpcUrl: `https://rpc.sepolia.org`,
     osApiUrl: "https://testnets-api.opensea.io",
     cdnUrl: "https://static-goerli.looksnice.org",
     rewardsSubgraphUrl: "https://api.thegraph.com/subgraphs/name/0xjurassicpunk/looks-distribution",

@@ -11,29 +11,22 @@ export interface ChainInfo {
 }
 
 export interface Addresses {
-  LOOKS: string;
-  LOOKS_LP: string;
-  WETH: string;
-  ROYALTY_FEE_MANAGER: string;
-  ROYALTY_FEE: string;
-  EXCHANGE: string;
-  TRANSFER_MANAGER_ERC721: string;
-  TRANSFER_MANAGER_ERC1155: string;
-  STRATEGY_STANDARD_SALE: string;
-  TRANSFER_SELECTOR_NFT: string;
-  STRATEGY_COLLECTION_SALE: string;
-  STRATEGY_PRIVATE_SALE: string;
-  STRATEGY_DUTCH_AUCTION: string;
-  PRIVATE_SALE_WITH_FEE_SHARING: string;
-  FEE_SHARING_SYSTEM: string;
-  STAKING_POOL_FOR_LOOKS_LP: string;
-  TOKEN_DISTRIBUTOR: string;
-  TRADING_REWARDS_DISTRIBUTOR: string;
-  MULTI_REWARDS_DISTRIBUTOR: string;
-  MULTICALL2: string;
-  REVERSE_RECORDS: string;
-  AGGREGATOR_UNISWAP_V3: string;
-  EXECUTION_MANAGER: string;
-  CURRENCY_MANAGER: string;
-  ORDER_VALIDATOR_V1: string;
+  /** 版税设置地址 */
+  ROYALTY_FEE: `0x${string}`;
+  /** market合约地址 */
+  EXCHANGE: `0x${string}`;
+  /** erc721地址 */
+  TRANSFER_MANAGER_ERC721: `0x${string}`;
+  /** erc1155地址 */
+  TRANSFER_MANAGER_ERC1155: `0x${string}`;
+  /** 标准挂单合约地址 */
+  STRATEGY_STANDARD_SALE: `0x${string}`;
+  /** 稳定币地址 */
+  STABLE_CURRENCY: `0x${string}`;
+  /** 本地包装货币地址 */
+  LOCAL_WRAPPER_CURRENCY: `0x${string}`;
+  /** 挂单前授权合约地址查询 */
+  SELL_APPROVAL: `0x${string}`;
+  /** 版税合约地址查询 */
+  COLLECTION_ROYALTI: `0x${string}`;
 }

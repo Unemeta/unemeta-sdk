@@ -1,7 +1,7 @@
-import { providers } from "ethers";
-import { SupportedChainId, MakerOrder } from "../types";
-import { etherSignTypedData } from "./etherSignTypedData";
-import { generateMakerOrderTypedData } from "./generateMakerOrderTypedData";
+import { providers, TypedDataDomain } from 'ethers';
+import { MakerOrder } from '../types';
+import { etherSignTypedData } from './etherSignTypedData';
+import { generateMakerOrderTypedData } from './generateMakerOrderTypedData';
 
 /**
  * Create a signature for a maker order
@@ -13,12 +13,17 @@ import { generateMakerOrderTypedData } from "./generateMakerOrderTypedData";
  */
 export const signMakerOrder = async (
   signer: providers.JsonRpcSigner,
-  chainId: SupportedChainId,
   order: MakerOrder,
-  verifyingContractAddress?: string
+  domain: TypedDataDomain,
 ): Promise<string> => {
   const signerAddress = await signer.getAddress();
-  const { domain, type, value } = generateMakerOrderTypedData(signerAddress, chainId, order, verifyingContractAddress);
-  const signatureHash = await etherSignTypedData(signer.provider, signerAddress, domain, type, value);
+  const { type, value } = generateMakerOrderTypedData(signerAddress, order);
+  const signatureHash = await etherSignTypedData(
+    signer.provider,
+    signerAddress,
+    domain,
+    type,
+    value,
+  );
   return signatureHash;
 };

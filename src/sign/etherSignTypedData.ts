@@ -1,6 +1,5 @@
-import { ethers } from "ethers";
-import { TypedDataDomain, TypedDataField } from "@ethersproject/abstract-signer";
-import { _TypedDataEncoder } from "@ethersproject/hash";
+import { ethers, TypedDataDomain, TypedDataField } from 'ethers';
+import { _TypedDataEncoder } from 'ethers/lib/utils';
 
 enum Wallet {
   METAMASK,
@@ -23,8 +22,10 @@ interface ExtendedJsonRpcProvider extends ethers.providers.JsonRpcProvider {
  * Never use server side
  * @returns Wallet
  */
-const getCurrentWallet = async (provider: ExtendedJsonRpcProvider): Promise<Wallet> => {
-  const isMetaMask = provider.connection.url === "metamask";
+const getCurrentWallet = async (
+  provider: ExtendedJsonRpcProvider,
+): Promise<Wallet> => {
+  const isMetaMask = provider.connection.url === 'metamask';
   const isFrame = provider.provider?.isFrame;
 
   if (isMetaMask) {
@@ -47,21 +48,36 @@ export const etherSignTypedData = async (
   address: string,
   domain: TypedDataDomain,
   types: Record<string, Array<TypedDataField>>,
-  value: Record<string, any>
+  value: Record<string, any>,
 ): Promise<string> => {
   // Populate any ENS names (in-place)
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const populated = await _TypedDataEncoder.resolveNames(domain, types, value, (name: string) => {
-    return provider.resolveName(name);
-  });
-  const rpcData = _TypedDataEncoder.getPayload(populated.domain, types, populated.value);
+  const populated = await _TypedDataEncoder.resolveNames(
+    domain,
+    types,
+    value,
+    (name: string) => {
+      return provider.resolveName(name) as Promise<string>;
+    },
+  );
+  const rpcData = _TypedDataEncoder.getPayload(
+    populated.domain,
+    types,
+    populated.value,
+  );
 
   const wallet = await getCurrentWallet(provider);
 
   if (wallet === Wallet.METAMASK || wallet === Wallet.FRAME) {
-    return await provider.send("eth_signTypedData_v4", [address, JSON.stringify(rpcData)]); // MetaMask, Frame
+    return await provider.send('eth_signTypedData_v4', [
+      address,
+      JSON.stringify(rpcData),
+    ]); // MetaMask, Frame
   }
 
-  return await provider.send("eth_signTypedData", [address, JSON.stringify(rpcData)]); // CoinBase wallet. WalletConnect: Trust, MetaMask Mobile, Rainbow, SafePal
+  return await provider.send('eth_signTypedData', [
+    address,
+    JSON.stringify(rpcData),
+  ]); // CoinBase wallet. WalletConnect: Trust, MetaMask Mobile, Rainbow, SafePal
 };

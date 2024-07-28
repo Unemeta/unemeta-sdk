@@ -1,19 +1,16 @@
-import { TypedDataDomain, TypedDataField } from "@ethersproject/abstract-signer";
-import { SupportedChainId, MakerOrder, MakerOrderWithEncodedParams } from "../types";
-import { getMakerOrderTypeAndDomain } from "./getMakerOrderTypeAndDomain";
-import { encodeOrderParams } from "./encodeOrderParams";
+import { MakerOrder, MakerOrderWithEncodedParams } from '../types';
+import { getMakerOrderTypeAndDomain } from './getMakerOrderTypeAndDomain';
+import { encodeOrderParams } from './encodeOrderParams';
+import { TypedDataField } from 'ethers';
 
 export const generateMakerOrderTypedData = (
   signerAddress: string,
-  chainId: SupportedChainId,
   order: MakerOrder,
-  verifyingContractAddress?: string
 ): {
   type: Record<string, TypedDataField[]>;
-  domain: TypedDataDomain;
   value: MakerOrderWithEncodedParams;
 } => {
-  const { domain, type } = getMakerOrderTypeAndDomain(chainId, verifyingContractAddress);
+  const { type } = getMakerOrderTypeAndDomain();
   const { encodedParams } = encodeOrderParams(order.params);
   const value: MakerOrderWithEncodedParams = {
     ...order,
@@ -21,5 +18,5 @@ export const generateMakerOrderTypedData = (
     params: encodedParams,
   };
 
-  return { domain, type, value };
+  return { type, value };
 };

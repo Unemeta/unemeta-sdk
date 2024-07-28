@@ -20,3 +20,5 @@ export { default as TokenDistributorAbi } from "./TokenDistributor.json";
 export { default as TradingRewardsDistributorAbi } from "./TradingRewardsDistributor.json";
 export { default as TransferSelectorNFTAbi } from "./TransferSelectorNFT.json";
 export { default as WETHAbi } from "./WETH.json";
+export { default as Sell } from "./Sell.json";
+

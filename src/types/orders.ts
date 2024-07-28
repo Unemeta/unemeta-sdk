@@ -1,4 +1,4 @@
-import { BigNumberish, BytesLike } from "ethers";
+import { BigNumberish, BytesLike } from 'ethers';
 
 /**
  * /!\ This type is used for the signature and should perfectly match the object signed by the user
@@ -14,23 +14,27 @@ export interface MakerOrder {
   strategy: string; // strategy for trade execution (e.g., DutchAuction, StandardSaleForFixedPrice)
   currency: string; // currency address
   nonce: BigNumberish; // order nonce (must be unique unless new maker order is meant to override existing one e.g., lower ask price)
-  startTime: BigNumberish; // startTime in timestamp
-  endTime: BigNumberish; // endTime in timestamp
+  startTime: number; // startTime in timestamp
+  endTime: number; // endTime in timestamp
   minPercentageToAsk: BigNumberish;
-  params: any[]; // params (e.g., price, target account for private sale)
+  params?: any[]; // params (e.g., price, target account for private sale)
 }
 
-export interface MakerOrderWithEncodedParams extends Omit<MakerOrder, "params"> {
+export type MakerOrderWithoutNonce = Omit<MakerOrder, 'nonce'>;
+
+export interface MakerOrderWithEncodedParams
+  extends Omit<MakerOrder, 'params'> {
   params: BytesLike;
 }
 
 /** MakerOrderWithSignature matches the type used for API order mutations and contract calls. */
 export interface MakerOrderWithSignature extends MakerOrder {
-  signature: string;
+  sign: string;
+  usdtPrice?: number;
 }
 
 /** MakerOrderWithVRS match the type sent to the contract when executing a trade */
-export interface MakerOrderWithVRS extends Omit<MakerOrder, "params"> {
+export interface MakerOrderWithVRS extends Omit<MakerOrder, 'params'> {
   v: number;
   r: string;
   s: string;
@@ -46,6 +50,7 @@ export interface TakerOrder {
   params: any[] | BytesLike; // params (e.g., price)
 }
 
-export interface TakerOrderWithEncodedParams extends Omit<TakerOrder, "params"> {
+export interface TakerOrderWithEncodedParams
+  extends Omit<TakerOrder, 'params'> {
   params: BytesLike;
 }
