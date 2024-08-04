@@ -1,4 +1,5 @@
 export enum SupportedChainId {
   MAINNET = 1,
-  SEPOLIA = 11155111
+  SEPOLIA = 11155111,
+  Arb = 42161
 }
