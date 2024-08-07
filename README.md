@@ -1,4 +1,4 @@
-# @unemeta/sdk
+# unemeta-sdk
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/Unemeta/unemeta-sdk) ![GitHub](https://img.shields.io/github/license/Unemeta/unemeta-sdk) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Unemeta/unemeta-sdk/Build)
 
@@ -13,13 +13,13 @@ This package has a peer dependency on [etherjs](https://docs.ethers.io/v5/).
 Install with
 
 ```bash
-yarn add @unemeta/sdk ethers
+yarn add unemeta-sdk ethers
 ```
 
 or
 
 ```bash
-npm install @unemeta/sdk ethers --save
+npm install unemeta-sdk ethers --save
 ```
 
 ### Documentation
